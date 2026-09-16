@@ -1,0 +1,27 @@
+{
+  "fracture_detector_best.pth": {
+    "source": "stage11_final_checkpoints/fold4_best.pth (fp32) -> fp16",
+    "architecture": "Faster R-CNN ResNet50-FPN, small anchors (16,32,64,128,256), num_classes=2",
+    "dtype": "fp16 (float32 at load time)",
+    "size_bytes": 82908116,
+    "md5": "242a9db9082d547e4993399d1616f595",
+    "checkpoint_metadata": {
+      "epoch": 5,
+      "quick_box_recall": 0.5930232558139535,
+      "trainable_backbone_layers": 1,
+      "use_small_anchors": true
+    }
+  },
+  "fracture_classifier_best.pth": {
+    "source": "stage8_final_checkpoints/fold4_best.pth (fp32) -> fp16",
+    "architecture": "ResNet18, 2 classes, crop 64x64, 3ch (brain/bone/subdural)",
+    "dtype": "fp16 (float32 at load time)",
+    "size_bytes": 22413259,
+    "md5": "40304feebe0f7fc18324be1566b05f66",
+    "checkpoint_metadata": {
+      "epoch": 3,
+      "f1": 0.8589743589743589,
+      "crop_size": 64
+    }
+  }
+}
