@@ -1,0 +1,22 @@
+[project]
+name = "brain-ct-triage-submission"
+version = "1.0.0"
+description = "IAAA Brain CT Triage Challenge - team submission (fracture + ICH volumes + midline shift)"
+requires-python = ">=3.10"
+
+# فقط پکیج‌های پایه — هیچ وابستگی اضافه‌ای لازم نیست:
+# معماری SegResNet و SMP-U-Net به‌صورت standalone داخل بسته پیاده‌سازی شده‌اند
+# (با تساوی عددی نسبت به monai و segmentation-models-pytorch تأیید شده)،
+# پس اگر این دو کتابخانه در ایمیج داوری هم نباشند اجرا بدون خطا انجام می‌شود.
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "pydicom>=2.4",
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
+
+[tool.setuptools]
+py-modules = ["submission", "model", "hemorrhage", "midline", "ich_model",
+              "segresnet_standalone", "smpunet_standalone", "triage",
+              "_dicom_plugins"]
